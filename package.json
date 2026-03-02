@@ -1,0 +1,30 @@
+{
+  "name": "simpsons-search",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "oxlint app",
+    "lint:fix": "oxlint app --fix",
+    "format": "oxfmt app",
+    "format:check": "oxfmt app --check"
+  },
+  "dependencies": {
+    "next": "^v16.2.0-canary.57",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/node": "^25.3.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "oxfmt": "^0.36.0",
+    "oxlint": "^1.51.0",
+    "tailwindcss": "^4.2.1",
+    "typescript": "6.0.0-beta"
+  }
+}
