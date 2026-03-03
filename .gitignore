@@ -36,3 +36,4 @@ next-env.d.ts
 # editor and local agent config
 /.vscode
 /.claude
+.vercel

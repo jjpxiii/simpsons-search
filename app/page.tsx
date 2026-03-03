@@ -2,6 +2,8 @@ import { getRandomCharacter } from "./server/random";
 import CharacterCard from "./components/CharacterCard";
 import SearchTypeahead from "./components/SearchTypeahead";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const randomCharacter = await getRandomCharacter();
   return (
