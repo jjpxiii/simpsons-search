@@ -13,7 +13,7 @@ async function getAllCharacters(): Promise<CachedCharacter[]> {
 
   const pages = Array.from({ length: 60 }, (_, i) => i + 1);
   const fetches = pages.map((page) =>
-    fetch(`https://thesimpsonsapi.com/api/characters?page=${page}`).then((r) => r.json()),
+    fetch(`https://thesimpsonsapi.com/api/characters?page=${page}`, { cache: "force-cache" }).then((r) => r.json()),
   );
 
   const results = await Promise.all(fetches);
