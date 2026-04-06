@@ -6,27 +6,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "oxlint app",
-    "lint:fix": "oxlint app --fix",
-    "format": "oxfmt app",
-    "format:check": "oxfmt app --check"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
-    "next": "^v16.2.0-canary.57",
+    "next": "^v16.2.2",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "zod": "^4.3.6"
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.1",
-    "@types/node": "^25.3.3",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^25.5.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^10.0.2",
-    "eslint-config-next": "^16.1.6",
-    "oxfmt": "^0.36.0",
-    "oxlint": "^1.51.0",
-    "tailwindcss": "^4.2.1",
-    "typescript": "6.0.0-beta"
+    "eslint": "^10.2.0",
+    "eslint-config-next": "^16.2.2",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6"
   }
 }

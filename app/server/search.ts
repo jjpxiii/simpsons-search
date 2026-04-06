@@ -1,5 +1,4 @@
-import { parseCharactersPage } from "./validation";
-import type { SimpsonsCharacter } from "./validation";
+import type { SimpsonsCharacter, SimpsonsCharactersPage } from "./validation";
 
 interface CachedCharacter {
   _nameLower: string;
@@ -18,8 +17,8 @@ async function getAllCharacters(): Promise<CachedCharacter[]> {
 
   const results = await Promise.all(fetches);
   cachedCharacters = results.flatMap((data) => {
-    const parsed = parseCharactersPage(data);
-    if (!parsed) return [];
+    const parsed = data as SimpsonsCharactersPage;
+    if (!parsed || !parsed.results) return [];
     return parsed.results.map((character) => ({
       character,
       _nameLower: character.name.toLowerCase(),

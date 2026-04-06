@@ -1,4 +1,3 @@
-import { parseCharacter } from "./validation";
 import type { SimpsonsCharacter } from "./validation";
 
 export async function getCharacter(id: string): Promise<SimpsonsCharacter | null> {
@@ -9,5 +8,5 @@ export async function getCharacter(id: string): Promise<SimpsonsCharacter | null
   }
 
   const payload = await response.json();
-  return parseCharacter(payload);
+  return (payload as SimpsonsCharacter) ?? null;
 }
