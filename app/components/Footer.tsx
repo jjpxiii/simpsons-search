@@ -5,8 +5,9 @@ const Footer = () => {
         Based on <span className="text-simpsons-yellow font-bold">Next.js</span>
       </p>
       <p className="text-sm opacity-80">
-        Coded by <span className="font-bold text-blue-300">Claude (The Smart One)</span> - "I, for
-        one, welcome our new AI overlords."
+        Coded by{" "}
+        <span className="font-bold text-blue-300">Claude (The Smart One)</span>{" "}
+        - "I, for one, welcome our new AI overlords."
       </p>
     </footer>
   );

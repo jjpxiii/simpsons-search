@@ -32,22 +32,30 @@ const SearchTypeahead = () => {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     }
-    document.addEventListener("mousedown", handleClickOutside, { passive: true });
+    document.addEventListener("mousedown", handleClickOutside, {
+      passive: true,
+    });
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const fetchResults = async (searchQuery: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
+      const res = await fetch(
+        `/api/search?q=${encodeURIComponent(searchQuery)}`,
+      );
       const data = await res.json();
       setResults(data as SearchResult[]);
       setIsOpen(true);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Search failed", error);
     } finally {
       setLoading(false);
@@ -101,7 +109,9 @@ const SearchTypeahead = () => {
                   alt={char.name}
                   className="w-8 h-8 object-contain"
                 />
-                <span className="font-semibold text-slate-700">{char.name}</span>
+                <span className="font-semibold text-slate-700">
+                  {char.name}
+                </span>
               </button>
             </li>
           ))}

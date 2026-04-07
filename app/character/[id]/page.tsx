@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getCharacter } from "../../server/character";
+import { ReactNode } from "react";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -27,9 +28,13 @@ export default async function CharacterPage({ params }: Props) {
           />
         </div>
         <div className="md:w-1/2 p-8 flex flex-col justify-center bg-sky-50">
-          <h1 className="text-4xl font-bold mb-2 text-simpsons-blue">{character.name}</h1>
+          <h1 className="text-4xl font-bold mb-2 text-simpsons-blue">
+            {character.name}
+          </h1>
           {character.occupation && (
-            <h2 className="text-xl text-gray-600 mb-6 font-semibold">{character.occupation}</h2>
+            <h2 className="text-xl text-gray-600 mb-6 font-semibold">
+              {character.occupation}
+            </h2>
           )}
 
           <div className="space-y-4">
@@ -51,18 +56,25 @@ export default async function CharacterPage({ params }: Props) {
 
             {character.phrases && character.phrases.length > 0 && (
               <div className="mt-6">
-                <h3 className="font-bold text-simpsons-red text-lg mb-2">Famous Quotes</h3>
+                <h3 className="font-bold text-simpsons-red text-lg mb-2">
+                  Famous Quotes
+                </h3>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 italic">
-                  {character.phrases.slice(0, 3).map((phrase, i) => (
-                    <li key={i}>"{phrase}"</li>
-                  ))}
+                  {character.phrases
+                    .slice(0, 3)
+                    .map((phrase: ReactNode, i: number) => (
+                      <li key={i}>"{phrase}"</li>
+                    ))}
                 </ul>
               </div>
             )}
           </div>
 
           <div className="mt-8 pt-6 border-t border-gray-200">
-            <Link href="/" className="text-simpsons-blue hover:underline font-bold">
+            <Link
+              href="/"
+              className="text-simpsons-blue hover:underline font-bold"
+            >
               &larr; Back to Search
             </Link>
           </div>
