@@ -12,7 +12,7 @@
     "format:check": "oxfmt app --check"
   },
   "dependencies": {
-    "next": "^v16.2.0-canary.57",
+    "next": "^v16.2.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "zod": "^4.3.6"
